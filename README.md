@@ -32,13 +32,13 @@
 * [カタログ設計.pdf](/docs/カタログ設計.pdf)
 
 # テーブル定義 / ER図
-* [カタログ設計.pdf](カタログ設計.pdf)<br>
-* [ER図.html](/docs/ER図.html)
+* [テーブル定義.pdf](/docs/テーブル定義.pdf)<br>
+* [ER図.png](/docs/ER図.png)
 
 # 画面遷移図
 * [画面遷移図.pdf](/docs/画面遷移図.pdf)
 
-# 画面ワイヤーフレーム
+# ワイヤーフレーム
 * [ワイヤーフレーム.pdf](/docs/ワイヤーフレーム.pdf)
 
 # 使用予定Gem / JSライブラリ
