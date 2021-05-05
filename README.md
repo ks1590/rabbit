@@ -25,7 +25,6 @@
   * レコードを項目別にグラフ表示
 * テーブル
   * テーブル形式でレコード一覧を表示
-  * 保存されているレコードをCSV形式で出力
 * 電卓機能
 
 # カタログ設計
@@ -41,15 +40,10 @@
 # ワイヤーフレーム
 * [ワイヤーフレーム.pdf](/docs/ワイヤーフレーム.pdf)
 
-# 使用予定Gem / JSライブラリ
-* Gem
-  * devise
-  * bootstrap
-  * kaminari
-  * carrierwave
-  * mini_magick
-  * fog-aws
-  * faker
-* JSライブラリ
-  * fullcalendar
-  * highcharts
+# 就業Termから使用する技術
+* devise
+* AWS
+
+# カリキュラム外から使用する技術
+* fullcalendar（JSライブラリ）
+* lazy_high_charts（gem）
