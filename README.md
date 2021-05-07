@@ -47,3 +47,11 @@
 # カリキュラム外から使用する技術
 * fullcalendar（JSライブラリ）
 * lazy_high_charts（gem）
+
+# その他使用予定Gem
+  * bootstrap
+  * kaminari
+  * carrierwave
+  * mini_magick
+  * fog-aws
+  * faker
