@@ -1,0 +1,7 @@
+- if @status == 'fail'
+  $("#error_explanation").html("#{j(render 'error', { trade: @trade })}")
+- else
+  $("#calendar").fullCalendar(
+  'renderEvent',
+  $.parseJSON("#{j render(@trade, format: :json).html_safe}"),true);
+  $(".modal").modal("hide");

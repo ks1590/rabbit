@@ -13,6 +13,8 @@
 //= require rails-ujs
 //= require activestorage
 //= require jquery.min
+//= require popper
+//= require bootstrap-sprockets
 //= require jquery-ui.min
 //= require moment.min
 //= require fullcalendar.min

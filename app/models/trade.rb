@@ -1,5 +1,5 @@
 class Trade < ApplicationRecord
-  validates :date, presence: true, length:{ maximum: 8 }
+  validates :event_on, presence: true, length:{ maximum: 10 }
   validates :amount, presence: true, length:{ maximum: 7 }
 
   belongs_to :payment

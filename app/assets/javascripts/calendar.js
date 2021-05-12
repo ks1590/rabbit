@@ -25,7 +25,6 @@ initialize_calendar = function () {
     },
 
     eventClick: function (event, jsEvent, view) {
-      console.log(event);
       $.getScript(event.edit_url, function () {
         $('#edit_trade').modal('show');
       })
