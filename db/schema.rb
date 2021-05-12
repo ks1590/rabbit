@@ -10,10 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_12_050452) do
+ActiveRecord::Schema.define(version: 2021_05_12_051603) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "payments", force: :cascade do |t|
+    t.string "name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "trades", force: :cascade do |t|
     t.date "event_on", null: false
@@ -21,6 +27,8 @@ ActiveRecord::Schema.define(version: 2021_05_12_050452) do
     t.text "memo", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "payment_id"
+    t.index ["payment_id"], name: "index_trades_on_payment_id"
   end
 
 end
