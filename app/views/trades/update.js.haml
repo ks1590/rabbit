@@ -1,0 +1,9 @@
+- if @status == 'fail'
+  alert('更新できませんでした。');
+- else
+  $('#calendar').fullCalendar('removeEvents', [#{@trade.id}]);
+  $('#calendar').fullCalendar(
+  'renderEvent',$.parseJSON("#{j render(@trade, format: :json).html_safe}"),
+  true
+  );
+  $('.modal').modal('hide');

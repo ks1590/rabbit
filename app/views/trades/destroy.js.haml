@@ -1,0 +1,5 @@
+- if @status == 'fail'
+  alert('削除できませんでした。');
+- else
+  $('#calendar').fullCalendar('removeEvents', [#{@trade.id}])
+  $('.modal').modal('hide');
