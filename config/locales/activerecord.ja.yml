@@ -1,0 +1,20 @@
+ja:
+  activerecord:
+    models:
+      trade: 取引内容
+      payment: 支払方法
+      category: カテゴリー
+    attributes:
+      trade:
+        event_on: 日付
+        memo: メモ
+        amount: 金額
+        payment: 支払方法
+        category: カテゴリー
+  helpers:
+    select:
+      prompt: 選択してください
+    submit:
+      create: "%{model}を登録する"
+      submit: "%{model}を保存する"
+      update: "%{model}を更新する"
