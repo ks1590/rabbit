@@ -10,7 +10,7 @@ class TradesController < ApplicationController
   end
 
   def create
-    @trade = Trade.create(trade_params)
+    @trade = current_user.trades.build(trade_params)
     if @trade.save      
     else      
       respond_to do |format|        
