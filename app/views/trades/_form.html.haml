@@ -1,0 +1,23 @@
+= form_with(model: @trade, remote: true) do |f|
+  .form-inputs
+    .form-group
+      = f.label :event_on, "日付", class: "form-control-label"
+      .input-group{"data-target-input" => "nearest"}
+        = f.date_field :event_on, class: "form-control start_hidden"
+    .form-group
+      = f.label :payment
+      = f.collection_select :payment_id, Payment.all, :id, :name, {prompt: '選択して下さい'}, {class: "form-control input-sm"}      
+    .form-group
+      = f.label :category      
+      = f.collection_select :category_id, Category.all, :id, :name, {prompt: '選択して下さい'}, {class: "form-control input-sm"}
+    .form-group
+      = f.label :amount, "金額", class: "form-control-label"
+      .input-group{"data-target-input" => "nearest"}
+        = f.text_field :amount, data: {autonumeric: {aSign: '¥', mDec: 0}}, class: "form-control"
+    .form-group
+      = f.label :memo, "メモ", class: "form-control-label"
+      .input-group{"data-target-input" => "nearest"}
+        = f.text_field :memo, class: "form-control"
+  .modal-footer.actions
+    = link_to '削除', trade, method: :delete, class: 'btn btn-danger btn-lg', data: { confirm: '削除してよろしいですか?' }, remote: true unless @trade.new_record?
+    = f.submit "保存", class: "btn btn-primary btn-lg"

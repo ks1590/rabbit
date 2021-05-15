@@ -1,0 +1,6 @@
+#error_explanation
+- if trade.errors.any?
+  .error_message.alert.alert-danger
+    %ul
+      - trade.errors.full_messages.each do |message|
+        %li= message
