@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_15_071541) do
+ActiveRecord::Schema.define(version: 2021_05_15_073249) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -35,8 +35,10 @@ ActiveRecord::Schema.define(version: 2021_05_15_071541) do
     t.datetime "updated_at", null: false
     t.bigint "payment_id"
     t.bigint "category_id"
+    t.bigint "user_id"
     t.index ["category_id"], name: "index_trades_on_category_id"
     t.index ["payment_id"], name: "index_trades_on_payment_id"
+    t.index ["user_id"], name: "index_trades_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2021_05_15_071541) do
     t.inet "last_sign_in_ip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
