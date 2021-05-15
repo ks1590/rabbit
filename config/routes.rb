@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root "trades#index"
-
+  resources :users, only: [:show]
+  devise_for :users, controllers: {
+    registrations: 'users/registrations'
+  }  
   resources :trades
 
   if Rails.env.development?
