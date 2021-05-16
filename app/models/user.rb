@@ -8,6 +8,8 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   validates :password, presence: true, length: { minimum: 6 }, on: :create
 
+  mount_uploader :image, ImageUploader
+
   has_many :trades, dependent: :destroy
 
   def update_without_current_password(params, *options)

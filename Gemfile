@@ -21,11 +21,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
 gem 'devise-i18n'
-# Use ActiveStorage variant
-# gem 'mini_magick', '~> 4.8'
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
+gem 'carrierwave'
+gem 'mini_magick'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.5.3'
