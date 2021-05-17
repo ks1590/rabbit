@@ -4,6 +4,7 @@ ja:
       trade: 取引内容
       payment: 支払方法
       category: カテゴリー
+      user: ユーザー
     attributes:
       trade:
         event_on: 日付
@@ -11,6 +12,8 @@ ja:
         amount: 金額
         payment: 支払方法
         category: カテゴリー
+      user:
+        name: ユーザー名
   helpers:
     select:
       prompt: 選択してください

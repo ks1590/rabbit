@@ -1,4 +1,5 @@
 class TradesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_trade, only: [:edit, :update, :destroy]
 
   def index
@@ -10,7 +11,7 @@ class TradesController < ApplicationController
   end
 
   def create
-    @trade = Trade.create(trade_params)
+    @trade = current_user.trades.build(trade_params)
     if @trade.save      
     else      
       respond_to do |format|        

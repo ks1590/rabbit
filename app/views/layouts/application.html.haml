@@ -7,5 +7,20 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if user_signed_in?      
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
+      = link_to 'カレンダー', trades_path
+      = link_to "プロフィール", user_path(current_user.id)
+    - else      
+      = link_to "ログイン", new_user_session_path
+    - if notice
+      　
+      .alert.alert-info
+        = notice
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+    - elsif alert
+      .alert.alert-danger
+        = alert
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
     = yield
     #remote_container

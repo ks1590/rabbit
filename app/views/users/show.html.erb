@@ -1,0 +1,11 @@
+<h1>Users#show</h1>
+<div class="circle-avatar">
+  <% if @user.image && @user.image.url %>
+      <%= image_tag @user.image.url(:thumb100), class: "img-circle"  %>
+  <% else %>
+    <%= image_tag 'default.png' %>
+  <% end %>
+</div>
+<p>名前 : <%= @user.name %></p>
+<p>メールアドレス : <%= @user.email %></p>
+<%= link_to "アカウント編集", edit_user_registration_path %>
