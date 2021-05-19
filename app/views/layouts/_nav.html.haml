@@ -1,0 +1,27 @@
+%aside.sidebar
+  .toggle
+    %a.burger.js-menu-toggle{"data-target" => "#main-navbar", "data-toggle" => "collapse", :href => "#"}
+      %span
+  .side-inner
+    .profile      
+      .circle-avatar
+        - if current_user.image && current_user.image.url
+          = image_tag current_user.image.url(:thumb100), class: "img-circle"
+        - else
+          = image_tag 'default.png'
+      %br/
+      #{current_user.name}
+      %br/
+      %br/
+      #{current_user.email}
+      %br/
+      %br/
+      = link_to "プロフィール", user_path(current_user.id), class: 'class'      
+    .nav-menu
+      %ul
+        %li          
+          %span.icon-home.mr-3>
+          = link_to 'カレンダー', trades_path
+        %li          
+          %span.icon-sign-out.mr-3>
+          = link_to "ログアウト", destroy_user_session_path, method: :delete
