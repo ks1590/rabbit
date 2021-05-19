@@ -1,5 +1,4 @@
 class TradesController < ApplicationController
-  before_action :authenticate_user!
   before_action :set_trade, only: [:edit, :update, :destroy]
 
   def index
