@@ -3,11 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .circle-avatar img {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
+  margin: 10px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
+  border: 2px solid #000;
+}
+
+#post_img {
+  margin: 10px;
 }
 
 .hidden {
