@@ -3,8 +3,8 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .circle-avatar img {
-  width: 130px;
-  height: 130px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   object-fit: cover;
   background: #fff;
@@ -12,4 +12,45 @@
 
 .hidden {
   display: none;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  word-wrap: break-word;
+  background-color: #fff;
+  background-clip: border-box;
+  border: 0 solid transparent;
+  border-radius: 25px !important;
+  margin-top: 100px;
+  margin-bottom: 1.5rem;
+  box-shadow: 2px 3px 15px #999;
+}
+
+@media (min-width: 1200px) {
+.container-xl, .container-lg, .container-md, .container-sm, .container {
+    max-width: 1320px !important;
+}}
+
+.pagination>li>a {          
+  border: none;
+  color: #696969;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #3a724d !important;
+  border-color: #3a724d !important;
+}
+
+.pagination>.active>a {     
+  background: #3a724d;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {        
+  border-radius: 15px; 
 }

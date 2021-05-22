@@ -2,7 +2,10 @@ class TradesController < ApplicationController
   before_action :set_trade, only: [:edit, :update, :destroy]
 
   def index
-    @trades = Trade.joins(:payment).joins(:category)
+    @trades = Trade.default.where(user_id: current_user.id)
+    
+    # binding.pry
+    
   end
   
   def new
