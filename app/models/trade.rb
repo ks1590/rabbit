@@ -5,4 +5,6 @@ class Trade < ApplicationRecord
   belongs_to :user
   belongs_to :payment
   belongs_to :category
+
+  scope :default, -> { order(event_on: :desc)}
 end

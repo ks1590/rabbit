@@ -32,7 +32,7 @@
           %h3 レコード一覧
           .table-responsive
             %table.table.text-nowrap
-              %thead.thead-dark
+              %thead.table-success
                 %tr
                   %th{:scope => "col"} 日付
                   %th{:scope => "col"} 支払方法
@@ -42,8 +42,9 @@
                 %tbody  
                   - @trades.each do |trade|          
                     %tr
-                      %th{:scope => "row"}= trade.event_on
+                      %th{:scope => "row"}= l trade.event_on, format: :short
                       %td= trade.payment.name
                       %td= trade.category.name
                       %td= number_to_currency(trade.amount, local: "jp")
-                      %td= trade.memo    
+                      %td= trade.memo
+            = paginate @trades

@@ -31,5 +31,26 @@
 
 @media (min-width: 1200px) {
 .container-xl, .container-lg, .container-md, .container-sm, .container {
-    max-width: 1450px !important;
+    max-width: 1320px !important;
 }}
+
+.pagination>li>a {          
+  border: none;
+  color: #696969;
+}
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #3a724d !important;
+  border-color: #3a724d !important;
+}
+
+.pagination>.active>a {     
+  background: #3a724d;
+  border-radius: 15px;
+}
+
+.pagination>li>a:hover {        
+  border-radius: 15px; 
+}
