@@ -116,6 +116,7 @@ GEM
       temple (>= 0.8.2)
       thor
       tilt
+    hash-deep-merge (0.1.1)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
     image_processing (1.12.0)
@@ -141,6 +142,8 @@ GEM
     kaminari-core (1.2.1)
     launchy (2.5.0)
       addressable (~> 2.7)
+    lazy_high_charts (1.6.1)
+      hash-deep-merge
     letter_opener (1.7.0)
       launchy (~> 2.2)
     letter_opener_web (1.4.0)
@@ -321,6 +324,7 @@ DEPENDENCIES
   jquery-rails
   kaminari
   launchy
+  lazy_high_charts
   letter_opener_web
   listen (>= 3.0.5, < 3.2)
   mini_magick
