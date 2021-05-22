@@ -3,7 +3,8 @@ class UsersController < ApplicationController
 
   def show
     @user = current_user
-    @trades = Trade.joins(:payment).joins(:category).default
-    @trades = @trades.page(params[:page]).per(PREVIEW)    
+    @trades = Trade.default.where(user_id: current_user.id)
+    @trades = @trades.page(params[:page]).per(PREVIEW)
+    redirect_to trades_path if @user.id != params[:id].to_i
   end
 end
