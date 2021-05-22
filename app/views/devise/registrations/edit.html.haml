@@ -33,8 +33,6 @@
             %i
               (#{t('.leave_blank_if_you_don_t_want_to_change_it')})            
             = f.password_field :password, autocomplete: "new-password", class: "form-control"  
-            - if @minimum_password_length              
-              %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
           .form-group
             = f.label :password_confirmation
             %br/
@@ -43,7 +41,5 @@
           .actions
             = f.submit t('.update'), class: "btn btn-primary btn-block"
             = link_to "戻る", user_path(current_user.id), class: "btn btn-secondary btn-block"
-        %h3= t('.cancel_my_account')
-        %p
-          = t('.unhappy')
-          = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete
+      %br/
+      = button_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete, class: "d-flex justify-content-start btn btn-link"  
