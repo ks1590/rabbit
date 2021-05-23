@@ -1,0 +1,8 @@
+%section
+  .container-fluid
+    .col-xl-12.col-lg-12.col-md-12.ml-auto
+      .row.justify-content-around.mb-2
+        .col-xl-11.col-md-11.col-sm-11.p-2
+          .chart
+            = high_chart_globals(@chart_globals)
+            = high_chart("my_chart", @pie_this_month)
