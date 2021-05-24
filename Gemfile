@@ -29,6 +29,7 @@ gem 'bootstrap', '~> 4.5.3'
 gem 'bootstrap-select-rails'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'faker'
 
 gem'lazy_high_charts'
 
