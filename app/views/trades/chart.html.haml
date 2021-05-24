@@ -5,4 +5,7 @@
         .col-xl-11.col-md-11.col-sm-11.p-2
           .chart
             = high_chart_globals(@chart_globals)
-            = high_chart("my_chart", @pie_this_month)
+            = high_chart("pie_this_month", @pie_this_month)
+        .col-xl-5.col-md-11.col-sm-11.p-2
+          .chart
+            = high_chart("pie_last_month", @pie_last_month)
