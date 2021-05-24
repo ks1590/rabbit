@@ -43,7 +43,7 @@ class TradesController < ApplicationController
   
   def chart
     @trades = Trade.list_default(current_user)
-    @expense_current_month = @trades.current_month.sum(:amount).to_i.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,')    
+    @expense_current_month = @trades.current_month.sum(:amount).to_i.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,')   
 
     months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
@@ -60,23 +60,23 @@ class TradesController < ApplicationController
     end    
     
     @pie_this_month = LazyHighCharts::HighChart.new("graph") do |c|
-      c.title(text: "今月の支出<br><br>#{@expense_current_month}円", align: "center", verticalAlign: 'middle' )
+      c.title(text: "今月の支出<br><br>#{@expense_current_month}円", align: "center", verticalAlign: "middle" )
       c.series({
         colorByPoint: true,
         data: data_expense
       })      
       c.plotOptions(pie: {        
-        innerSize: '80%',
+        innerSize: "80%",
         allowPointSelect: true,
-        cursor: 'pointer',
+        cursor: "pointer",
         dataLabels: {          
-          format: '{point.name}: {point.percentage:.1f} %',
+          format: "{point.name}: {point.percentage:.1f} %",
           enabled: true, 
           distance: 0,
           allowOverlap: false,
           style: {
-            color: '#555',               
-            textAlign: 'center', 
+            color: "#555",               
+            textAlign: "center", 
             textOutline: 0,
           }}
         })   
@@ -95,26 +95,65 @@ class TradesController < ApplicationController
       data_expense.push(name: data[0], y: data[1])
     end
     
-    @expense_last_month = @trades.last_month.sum(:amount).to_i.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,')
+    @expense_last_month = @trades.last_month.sum(:amount).to_i.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,') 
 
     @pie_last_month = LazyHighCharts::HighChart.new("graph") do |c|
-      c.title(text: "先月の支出<br><br>#{@expense_last_month}円", align: "center", verticalAlign: 'middle' )
+      c.title(text: "先月の支出<br><br>#{@expense_last_month}円", align: "center", verticalAlign: "middle" )
       c.series({
         colorByPoint: true,
         data: data_expense
       })      
       c.plotOptions(pie: {        
-        innerSize: '80%',
+        innerSize: "80%",
         allowPointSelect: true,
-        cursor: 'pointer',
+        cursor: "pointer",
         dataLabels: {          
-          format: '{point.name}: {point.percentage:.1f} %',
+          format: "{point.name}: {point.percentage:.1f} %",
           enabled: true, 
           distance: 0,
           allowOverlap: false,
           style: {
-            color: '#555',               
-            textAlign: 'center', 
+            color: "#555",               
+            textAlign: "center", 
+            textOutline: 0,
+          }}
+        })   
+      c.chart(type: "pie")              
+    end
+
+    hash_expense = {}
+    arry_expense = Trade.current_year.sort_expense(current_user)
+    data_expense = []
+    
+    for item in arry_expense do
+      hash_expense[item[1]] = Trade.current_year.where(category_id: item[0]).sum(:amount)
+    end
+    
+    hash_expense.each do |data|
+      data_expense.push(name: data[0], y: data[1])
+    end
+    
+    @expense_current_year = @trades.current_year.sum(:amount).to_i.to_s.gsub(/(\d)(?=(\d{3})+(?!\d))/, '\1,')  
+
+    @pie_current_year = LazyHighCharts::HighChart.new("graph") do |c|
+      c.title(text: "今年の支出<br><br>#{@expense_current_year}円", align: "center", verticalAlign: "middle" )
+      c.series({
+        colorByPoint: true,
+        data: data_expense
+      })      
+      c.plotOptions(pie: {        
+        innerSize: "80%",
+        allowPointSelect: true,
+        cursor: "pointer",
+        dataLabels: {          
+          format: "{point.name}: {point.percentage:.1f} %",
+          enabled: true, 
+          distance: 0,
+          allowOverlap: false,
+          style: {
+            color: "#555",     
+            align: "center",          
+            textAlign: "center", 
             textOutline: 0,
           }}
         })   
