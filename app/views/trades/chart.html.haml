@@ -5,10 +5,13 @@
         .col-11.p-2
           .chart
             = high_chart_globals(@chart_globals)
-            = high_chart("pie_last_month", @pie_last_month)            
+            = high_chart("pie_last_month", @pie_last_month)
         .col-11.p-2
           .chart
             = high_chart("pie_this_month", @pie_this_month)
         .col-11.p-2
           .chart
             = high_chart("pie_current_year", @pie_current_year)
+        .col-11.p-2
+          .chart
+            = high_chart("my_bar_div", @bar)
