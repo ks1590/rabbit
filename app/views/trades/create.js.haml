@@ -3,5 +3,5 @@
 - else
   $("#calendar").fullCalendar(
   'renderEvent',
-  $.parseJSON("#{j render(@trade, format: :json).html_safe}"),true);
+  $.parseJSON("#{j render(@trade, format: :json).html_safe}"));
   $(".modal").modal("hide");
