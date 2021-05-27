@@ -22,7 +22,7 @@ body:before {
   -webkit-transition: .3s all ease-in-out;
   -o-transition: .3s all ease-in-out;
   transition: .3s all ease-in-out;
-  min-height: 100vh;  
+  height: 180vh;
 }
 
 body.show-sidebar:before {
@@ -31,7 +31,7 @@ body.show-sidebar:before {
 }
 
 .site-section {
-  padding: 7rem 0; 
+  padding: 7rem 0;
 }
 
 aside, main {

@@ -29,6 +29,9 @@ gem 'bootstrap', '~> 4.5.3'
 gem 'bootstrap-select-rails'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'faker'
+
+gem'lazy_high_charts'
 
 group :development, :test do  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

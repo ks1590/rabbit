@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
   root "trades#index"
+  resources :trades do
+    collection do
+      get :chart
+    end    
+  end
   
   devise_for :users, controllers: {
     registrations: 'users/registrations',
