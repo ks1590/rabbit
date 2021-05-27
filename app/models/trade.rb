@@ -31,6 +31,13 @@ class Trade < ApplicationRecord
   scope :month_mar, -> { where(event_on: month_mar.beginning_of_month..month_mar.end_of_month) }
   scope :month_apr, -> { where(event_on: month_apr.beginning_of_month..month_apr.end_of_month) }
   scope :month_may, -> { where(event_on: month_may.beginning_of_month..month_may.end_of_month) }
+  scope :month_jun, -> { where(event_on: month_jun.beginning_of_month..month_jun.end_of_month) }
+  scope :month_jul, -> { where(event_on: month_jul.beginning_of_month..month_jul.end_of_month) }
+  scope :month_aug, -> { where(event_on: month_aug.beginning_of_month..month_aug.end_of_month) }
+  scope :month_sep, -> { where(event_on: month_sep.beginning_of_month..month_sep.end_of_month) }
+  scope :month_oct, -> { where(event_on: month_oct.beginning_of_month..month_oct.end_of_month) }
+  scope :month_nov, -> { where(event_on: month_nov.beginning_of_month..month_nov.end_of_month) }
+  scope :month_dec, -> { where(event_on: month_dec.beginning_of_month..month_dec.end_of_month) }
 
   def test_sum
     months = [Trade.month_apr,Trade.month_may]
@@ -52,6 +59,7 @@ class Trade < ApplicationRecord
   end
   
   def self.sort_expense(owner)
-    joins(:category).where(user_id: owner.id).pluck(:category_id, :name).uniq.sort    
+    # joins(:category).where(user_id: owner.id).pluck(:category_id, :name).uniq.sort    
+    pluck(:category_id, :name).uniq.sort
   end
 end
