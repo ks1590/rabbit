@@ -5,6 +5,7 @@ FactoryBot.define do
     category_id { category.id}
     amount { 1000 }
     memo { '' }
+    user
   end
 
   factory :second_trade, class: Trade do
@@ -13,6 +14,7 @@ FactoryBot.define do
     category_id { category.id}
     amount { 2000 }
     memo { 'ランチ＠新宿' }
+    user
   end
 
   factory :third_trade, class: Trade do
@@ -20,6 +22,7 @@ FactoryBot.define do
     payment_id { payment.id }
     category_id { category.id}
     amount { 3000 }
-    memo { 'ディナー＠渋谷' } 
+    memo { 'ディナー＠渋谷' }
+    user
   end
 end
