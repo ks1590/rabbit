@@ -30,6 +30,7 @@ gem 'bootstrap-select-rails'
 gem 'jquery-rails'
 gem 'kaminari'
 gem 'faker'
+gem 'autonumeric-rails'
 
 gem'lazy_high_charts'
 
