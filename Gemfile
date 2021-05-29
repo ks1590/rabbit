@@ -3,6 +3,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.6.5'
 gem 'hamlit'
+gem "haml-rails"
 
 gem 'pry-rails'
 gem 'better_errors'

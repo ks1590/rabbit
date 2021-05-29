@@ -1,0 +1,21 @@
+.l-form
+  .form
+    = form_for(resource, as: resource_name, url: session_path(resource_name), class: "form") do |f|
+      .title
+        %h2.cp_h1title
+          %span Rabbit
+      .form_div
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form_input" , placeholder: " "
+        = f.label :email, class: "form_label"
+      .form_div
+        = f.password_field :password, autocomplete: "current-password", class: "form_input", placeholder: " "
+        = f.label :password, class: "form_label"
+        %br/
+      - if devise_mapping.rememberable?
+        .field
+          = f.check_box :remember_me
+          = f.label :remember_me
+      .actions
+        = f.submit t('.sign_in'), class: "form_button"
+    .link
+      = render "devise/shared/links"

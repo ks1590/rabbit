@@ -1,0 +1,23 @@
+.l-form
+  .form
+    = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "form") do |f|
+      = render "devise/shared/error_messages", resource: resource
+      .title
+        %h2.cp_h1title
+          %span Rabbit
+      .form_div
+        = f.text_field :name, autofocus: true, autocomplete: "name", class: "form_input", placeholder: " "
+        = f.label :name, class: "form_label"
+      .form_div
+        = f.email_field :email, autofocus: true, autocomplete: "email", class: "form_input", class: "form_input", placeholder: " "
+        = f.label :email, class: "form_label"
+      .form_div
+        = f.password_field :password, autocomplete: "new-password", class: "form_input", class: "form_input", placeholder: " "
+        .form_label
+          = f.label :password
+      .form_div
+        = f.password_field :password_confirmation, autocomplete: "new-password", class: "form_input", class: "form_input", placeholder: " "
+        = f.label :password_confirmation, class: "form_label"
+      .actions
+        = f.submit t('.sign_up'), class: "form_button"
+    = render "devise/shared/links"
