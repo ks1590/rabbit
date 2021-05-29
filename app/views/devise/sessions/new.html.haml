@@ -1,3 +1,5 @@
+- content_for :css do
+  = stylesheet_link_tag 'devise'
 .l-form
   .form
     = form_for(resource, as: resource_name, url: session_path(resource_name), class: "form") do |f|
