@@ -19,5 +19,5 @@
       .input-group{"data-target-input" => "nearest"}
         = f.text_field :memo, class: "form-control"
   .modal-footer.actions
-    = link_to '削除', trade, method: :delete, class: 'btn btn-danger btn-lg', data: { confirm: '削除してよろしいですか?' }, remote: true unless @trade.new_record?
-    = f.submit "保存", class: "btn btn-primary btn-lg"
+    = f.submit "保存", class: "btn btn-block btn-save"
+    = link_to '削除', trade, method: :delete, class: 'btn btn-block btn-delete', data: { confirm: '削除してよろしいですか?' }, remote: true unless @trade.new_record?
