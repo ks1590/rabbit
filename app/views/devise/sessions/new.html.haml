@@ -21,3 +21,4 @@
         = f.submit t('.sign_in'), class: "form_button"
     .link
       = render "devise/shared/links"
+      = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
