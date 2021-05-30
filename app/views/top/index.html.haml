@@ -1,0 +1,12 @@
+- content_for :css do
+  = stylesheet_link_tag 'top'
+%header
+  .navbar
+    .logo
+      %h1 Rabbit
+      %h5
+        日々の習慣管理を美しく。
+    .buttons
+      =link_to "新規登録", new_user_registration_path, class:  "btn btn-primary"      
+      =link_to "ログイン", new_user_session_path, class:  "btn btn-primary"
+  .text-content    

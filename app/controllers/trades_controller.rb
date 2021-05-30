@@ -1,5 +1,6 @@
 class TradesController < ApplicationController
   before_action :set_trade, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index    
     @trades = current_user.trades.includes(:category)

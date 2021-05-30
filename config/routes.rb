@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root "trades#index"
+  root "top#index"
   resources :trades do
     collection do
       get :chart
