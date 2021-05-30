@@ -5,6 +5,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
   before_action :authenticate_user!
   before_action :configure_account_update_params, only: [:update]
+  before_action :ensure_normal_user, only: [:destroy]
 
   protected
   
@@ -20,7 +21,13 @@ class Users::RegistrationsController < Devise::RegistrationsController
   def after_update_path_for(resource)
     user_path(id: current_user.id)
   end
-
+  
+  def ensure_normal_user
+    if resource.email == 'guest_user@example.com'
+      redirect_to trades_path, alert: 'ゲストユーザーは削除できません。'
+    end
+  end
+  
   # def configure_account_update_params
   #   devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   # end
