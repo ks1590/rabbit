@@ -159,8 +159,6 @@ class TradesController < ApplicationController
       c.chart(type: "pie")              
     end
 
-    category = Category.pluck(:id, :name)    
-
     months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     expense_months = [trades.month_jan,
                       trades.month_feb,
@@ -180,12 +178,12 @@ class TradesController < ApplicationController
       f.yAxis(:stackLabels=>{:enabled=> true},title: {text: '円'})
       
       
-      category.each do |c|
+      arry_expense.each do |expense|
         arr = []
         for m in expense_months do
-          arr.push(m.where(category_id: c[0]).sum(:amount))
+          arr.push(m.where(category_id: expense[0]).sum(:amount))
         end
-        f.series(:name=> c[1],:data=> arr)
+        f.series(:name=> expense[1],:data=> arr)
       end
       f.title({:text=>"月ごとの支出"})
       f.legend({layout: "horizontal", itemDistance: 50})

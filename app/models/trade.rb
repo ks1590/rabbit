@@ -37,29 +37,13 @@ class Trade < ApplicationRecord
   scope :month_sep, -> { where(event_on: month_sep.beginning_of_month..month_sep.end_of_month) }
   scope :month_oct, -> { where(event_on: month_oct.beginning_of_month..month_oct.end_of_month) }
   scope :month_nov, -> { where(event_on: month_nov.beginning_of_month..month_nov.end_of_month) }
-  scope :month_dec, -> { where(event_on: month_dec.beginning_of_month..month_dec.end_of_month) }
-
-  def test_sum
-    months = [Trade.month_apr,Trade.month_may]
-    arr = []
-    joins(:category).pluck(:category_id, :name).uniq.sort 
-
-    for item in arry_expense do
-      hash_expense[item[1]] = Trade.current_month.where(category_id: item[0]).sum(:amount)
-    end
-    
-    hash_expense.each do |data|
-      arr.push(name: data[0], data: data[1])
-    end
-  end
-  
+  scope :month_dec, -> { where(event_on: month_dec.beginning_of_month..month_dec.end_of_month) }  
 
   def self.list_default(owner)
     joins(:payment).joins(:category).where(user_id: owner.id).order(event_on: :desc) 
   end
   
-  def self.sort_expense(owner)
-    # joins(:category).where(user_id: owner.id).pluck(:category_id, :name).uniq.sort    
+  def self.sort_expense(owner)    
     pluck(:category_id, :name).uniq.sort
   end
 end
