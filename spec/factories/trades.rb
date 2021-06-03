@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :trade do
-    event_on { '002021/05/10' }
+    event_on { '002021/06/10' }
     payment_id { payment.id }
     category_id { category.id}
     amount { 1000 }
@@ -9,7 +9,7 @@ FactoryBot.define do
   end
 
   factory :second_trade, class: Trade do
-    event_on { '002021/05/20' }
+    event_on { '002021/06/20' }
     payment_id { payment.id }
     category_id { category.id}
     amount { 2000 }
@@ -18,7 +18,7 @@ FactoryBot.define do
   end
 
   factory :third_trade, class: Trade do
-    event_on { '002021/05/30' }
+    event_on { '002021/06/30' }
     payment_id { payment.id }
     category_id { category.id}
     amount { 3000 }
