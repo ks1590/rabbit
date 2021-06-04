@@ -7,6 +7,8 @@
       .circle-avatar
         - if current_user.image && current_user.image.url
           = image_tag current_user.image.url(:thumb100), class: "img-circle"
+        -elsif current_user.email = "guest_user@example.com"
+          = image_tag 'guest.png'
         - else
           = image_tag 'default.png'
       %br/
