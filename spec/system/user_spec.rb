@@ -61,6 +61,15 @@ RSpec.describe 'ユーザー登録、セッション機能のテスト', type: :
       end
     end
 
+    context '画像選択をクリックした場合' do
+      it 'プロフィール画像が登録できる' do        
+        visit edit_user_registration_path
+        attach_file 'post_img', "#{Rails.root}/spec/factories/images/test.png"
+        click_on '更新'
+        expect(page).to have_selector "img[src$='test.png']"
+      end
+    end
+
     context '他人のプロフィールに飛んだ場合' do
       it 'カレンダーに遷移する' do
         visit user_path(@second_user.id)
