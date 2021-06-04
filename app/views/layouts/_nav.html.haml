@@ -15,13 +15,13 @@
       %ul
         %li          
           %span.mr-3>
-          = link_to 'カレンダー', trades_path
+          = link_to t('view.carendar'), trades_path
         %li          
           %span.mr-3>
-          = link_to 'グラフ', chart_trades_path
+          = link_to t('view.chart'), chart_trades_path
         %li          
           %span.mr-3>
-          = link_to 'プロフィール', user_path(current_user.id)
+          = link_to t('view.profile'), user_path(current_user.id)
         %li          
           %span.mr-3>
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to t('view.log_out'), destroy_user_session_path, method: :delete
