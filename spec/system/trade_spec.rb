@@ -38,4 +38,16 @@ RSpec.describe 'カレンダー機能', type: :system do
       end
     end
   end
+
+  describe 'グラフ表示機能', js: true  do
+    context 'グラフに遷移した場合' do
+      it '支出額の合計が表示される' do
+        visit chart_trades_path
+        expect(page).to have_content '今月の支出'
+        expect(page).to have_content '6,000円'
+        expect(page).to have_content '月ごとの支出'
+        expect(page).to have_content '6,000'
+      end
+    end
+  end
 end
