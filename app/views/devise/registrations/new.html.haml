@@ -6,7 +6,7 @@
       = render "devise/shared/error_messages", resource: resource
       .title
         %h2.cp_h1title
-          %span Rabbit
+          %span=t('view.logo')
       .form_div
         = f.text_field :name, autofocus: true, autocomplete: "name", class: "form_input", placeholder: " "
         = f.label :name, class: "form_label"
@@ -23,4 +23,4 @@
       .actions
         = f.submit t('.sign_up'), class: "form_button"
     = render "devise/shared/links"
-    = link_to 'ゲストログイン（閲覧用）', users_guest_sign_in_path, method: :post
+    = link_to t('view.guest'), users_guest_sign_in_path, method: :post
