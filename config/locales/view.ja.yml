@@ -11,6 +11,7 @@ ja:
     memo: メモ
     submit: 保存
     delete: 削除
+    delete_picture: 画像を削除
     submit_new: 新規登録
     log_in: ログイン
     log_out: ログアウト
@@ -20,3 +21,5 @@ ja:
     payment: 支払方法
     category: カテゴリ
     edit_acount: アカウント編集
+    guest: ゲストログイン（閲覧用）
+    back: 戻る
