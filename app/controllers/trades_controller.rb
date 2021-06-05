@@ -196,7 +196,31 @@ class TradesController < ApplicationController
       f.global(useUTC: false)
       f.lang(thousandsSep: ",",
       numericSymbols: nil)
-      f.colors(["#FF9202", "#FF91AF", "#88CED3", "#393C99", "#3F62C4", "#4587CA", "#B8D808", "#78B45C", "#FFE053"])
+      f.colors([
+        "#ef857d", 
+        "#ea5550",
+        "#ea5550",
+        "#ffedab",
+        "#ee7800",
+        "#f7b977",        
+        "#fff3b8",
+        "#fdd35c",
+        "#a3d6cc",
+        "#00947a",
+        "#00ac97",
+        "#dbffb7",
+        "#00afcc",
+        "#00a1e9",
+        "#a2c2e6",
+        "#8d93c8",
+        "#a4a8d4",
+        "#043c78",
+        "#26499d",
+        "#434da2",          
+        "#4d4398",
+        "#da81b2",
+        "#f5ecf4",
+        "#f8f4e6"])
     end
   end
 
