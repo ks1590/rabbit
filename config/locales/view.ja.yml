@@ -1,6 +1,7 @@
 ja:
   view:
     logo: Rabbit
+    logo_info: Rabbitとは
     carendar: カレンダー
     chart: グラフ
     profile: プロフィール    
@@ -23,3 +24,4 @@ ja:
     edit_acount: アカウント編集
     guest: ゲストログイン（閲覧用）
     back: 戻る
+    close: 閉じる
