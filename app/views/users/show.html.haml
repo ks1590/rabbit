@@ -10,7 +10,7 @@
             .circle-avatar
               - if @user.image && @user.image.url
                 = image_tag @user.image.url(:thumb100), class: "img-circle"
-              -elsif @user.email = "guest_user@example.com"
+              - elsif @user.email == "guest_user@example.com"
                 = image_tag 'guest.png'
               - else
                 = image_tag 'default.png'
