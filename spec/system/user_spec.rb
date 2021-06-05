@@ -54,10 +54,8 @@ RSpec.describe 'ユーザー登録、セッション機能のテスト', type: :
         click_on 'プロフィール'
         expect(current_path).to eq user_path(@user.id)
         expect(page).to have_content 'user1'
-        expect(page).to have_content 'user1@test.com'
         expect(current_path).not_to eq user_path(@second_user.id)
         expect(page).not_to have_content 'user2'
-        expect(page).not_to have_content 'user2@test.com'
       end
     end
 
