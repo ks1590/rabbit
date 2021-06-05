@@ -27,6 +27,18 @@ RSpec.describe 'カレンダー機能', type: :system do
       end
     end
   end
+  
+  describe '取引明細編集機能' do
+    context '取引明細を編集した場合' do
+      it '編集内容がカレンダー表示される', js: true do        
+        visit trades_path
+        page.first(".fc-event-container").click      
+        fill_in "trade_amount", with: 3000
+        click_on "保存"
+        expect(page).to have_content "食費 : 3,000円"
+      end
+    end
+  end
 
   describe '一覧表示機能' do
     context 'カレンダーに遷移した場合' do
@@ -47,6 +59,21 @@ RSpec.describe 'カレンダー機能', type: :system do
         expect(page).to have_content '6,000円'
         expect(page).to have_content '月ごとの支出'
         expect(page).to have_content '6,000'
+      end
+    end
+  end
+
+  describe '取引明細削除機能' do
+    context '取引明細を削除した場合' do
+      it 'カレンダーに取引が表示されない', js: true do        
+        visit trades_path
+        page.first(".fc-event-container").click
+        click_on "削除"
+        # page.accept_confirm do
+        #   click_on :delete_button
+        # end
+        page.accept_alert
+        expect(page).not_to have_content "食費 : 1,000円"
       end
     end
   end
