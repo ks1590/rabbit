@@ -23,3 +23,7 @@
 //= require highcharts/highcharts
 //= require autonumeric
 //= require_tree .
+
+$(function () {
+  $('.alert').fadeOut(3500);
+});
