@@ -1,13 +1,32 @@
 - content_for :css do
   = stylesheet_link_tag 'top'
 .top
-  %header
-    .navbar
-      .logo
-        %h1= t('view.logo')
-        %h5
-          日々の習慣管理を美しく。
+  %header.d-flex.justify-content-center.align-items-center.flex-column.bd-highlight.mb-3
+    .p-2.bd-highlight
+      %h1= t('view.logo')
+    .p-2.bd-highlight
+      %h5
+        日々の習慣管理を美しく。
+    .p-2.bd-highlight
       .buttons
         =link_to t('view.submit_new'), new_user_registration_path, class:  "btn btn-primary"      
         =link_to t('view.log_in'), new_user_session_path, class:  "btn btn-primary"
-    .text-content    
+    .p-2.bd-highlight
+      %button.btn.btn-outline-dark{"data-target" => "#staticBackdrop", "data-toggle" => "modal", :type => "button"}
+        =t('view.logo_info')
+#staticBackdrop.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "staticBackdropLabel", "data-keyboard" => "false", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered.modal-dialog-scrollable
+    .modal-content
+      .modal-header
+        %h5#staticBackdropLabel.modal-title=t('view.logo_info')
+        %button.close{"aria-label" => "Close", "data-dismiss" => "modal", :type => "button"}
+          %span{"aria-hidden" => "true"} ×
+      .modal-body
+        %p カレンダーとグラフを組み合わせたダッシュボードで日々の習慣を見える化し、習慣管理をサポートします。
+        %hr/
+        %p 《できること》
+        %p ・家計簿記録
+        %p ・学習記録　※近日リリース予定
+        %p ・トレーニング記録　※近日リリース予定
+      .modal-footer
+        %button.btn.btn-secondary{"data-dismiss" => "modal", :type => "button"}= t('view.close')
