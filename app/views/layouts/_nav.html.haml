@@ -7,6 +7,8 @@
       .circle-avatar
         - if current_user.image && current_user.image.url
           = image_tag current_user.image.url(:thumb100), class: "img-circle"
+        - elsif current_user.email == "guest_user@example.com"
+          = image_tag 'guest.png'
         - else
           = image_tag 'default.png'
       %br/
@@ -15,13 +17,13 @@
       %ul
         %li          
           %span.mr-3>
-          = link_to 'カレンダー', trades_path
+          = link_to t('view.carendar'), trades_path
         %li          
           %span.mr-3>
-          = link_to 'グラフ', chart_trades_path
+          = link_to t('view.chart'), chart_trades_path
         %li          
           %span.mr-3>
-          = link_to 'プロフィール', user_path(current_user.id)
+          = link_to t('view.profile'), user_path(current_user.id)
         %li          
           %span.mr-3>
-          = link_to "ログアウト", destroy_user_session_path, method: :delete
+          = link_to t('view.log_out'), destroy_user_session_path, method: :delete

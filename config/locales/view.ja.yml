@@ -1,0 +1,25 @@
+ja:
+  view:
+    logo: Rabbit
+    carendar: カレンダー
+    chart: グラフ
+    profile: プロフィール    
+    trade_new: 新しい取引を作成
+    trade_edit: 取引明細
+    event_on: 日付
+    amount: 金額
+    memo: メモ
+    submit: 保存
+    delete: 削除
+    delete_picture: 画像を削除
+    submit_new: 新規登録
+    log_in: ログイン
+    log_out: ログアウト
+    user_name: ユーザー名
+    email: メールアドレス
+    list_all: レコード一覧
+    payment: 支払方法
+    category: カテゴリ
+    edit_acount: アカウント編集
+    guest: ゲストログイン（閲覧用）
+    back: 戻る

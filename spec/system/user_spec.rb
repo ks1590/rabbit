@@ -54,10 +54,17 @@ RSpec.describe 'ユーザー登録、セッション機能のテスト', type: :
         click_on 'プロフィール'
         expect(current_path).to eq user_path(@user.id)
         expect(page).to have_content 'user1'
-        expect(page).to have_content 'user1@test.com'
         expect(current_path).not_to eq user_path(@second_user.id)
         expect(page).not_to have_content 'user2'
-        expect(page).not_to have_content 'user2@test.com'
+      end
+    end
+
+    context '画像選択をクリックした場合' do
+      it 'プロフィール画像が登録できる' do        
+        visit edit_user_registration_path
+        attach_file 'post_img', "#{Rails.root}/spec/factories/images/test.png"
+        click_on '更新'
+        expect(page).to have_selector "img[src$='test.png']"
       end
     end
 

@@ -24,6 +24,8 @@ gem 'devise'
 gem 'devise-i18n'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'fog-aws'
+gem 'dotenv-rails'
 
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap', '~> 4.5.3'
@@ -35,6 +37,8 @@ gem 'autonumeric-rails'
 
 gem'lazy_high_charts'
 
+gem 'unicorn'
+gem 'mini_racer', platforms: :ruby
 group :development, :test do  
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'spring'
@@ -43,6 +47,11 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'launchy'
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -51,6 +60,8 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'letter_opener_web'
+  gem 'ed25519'
+  gem 'bcrypt_pbkdf'
 end
 
 group :test do
