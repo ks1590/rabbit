@@ -24,5 +24,9 @@ module Rabbit
         request_specs: false
       g.fixture_replacement :factory_bot, dir: "spec/factories"
     end
+
+    config.action_view.field_error_proc = Proc.new do |html_tag, instance|
+      %Q(#{html_tag}).html_safe
+    end
   end
 end
