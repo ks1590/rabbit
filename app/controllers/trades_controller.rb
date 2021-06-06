@@ -79,7 +79,7 @@ class TradesController < ApplicationController
             textOutline: 0,
           }}
         })
-      c.chart(type: "pie")
+      c.chart(type: "pie", renderTo: 'pie_this_month')
     end
     
     hash_expense = {}
@@ -117,7 +117,7 @@ class TradesController < ApplicationController
             textOutline: 0,
           }}
         })
-      c.chart(type: "pie")
+      c.chart(type: "pie", renderTo: 'pie_last_month')
     end
 
     hash_expense = {}
@@ -156,7 +156,7 @@ class TradesController < ApplicationController
             textOutline: 0,
           }}
         })   
-      c.chart(type: "pie")              
+      c.chart(type: "pie", renderTo: 'pie_current_year')
     end
 
     months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
@@ -189,7 +189,7 @@ class TradesController < ApplicationController
       f.legend({layout: "horizontal", itemDistance: 50})
       f.options[:chart][:defaultSeriesType] = "column"
       f.plot_options({:column=>{:stacking=>"normal"},:series=>{:dataLabels=>{:enabled=> true}}})
-      f.chart(type: "column",height: 950)
+      f.chart(type: "column", height: 950, renderTo: 'pie_current_year')
     end
 
     @chart_globals = LazyHighCharts::HighChartGlobals.new do |f|
