@@ -41,17 +41,21 @@
 * [ワイヤーフレーム.pdf](/docs/ワイヤーフレーム.pdf)
 
 # 就業Termから使用する技術
+* Ajax
 * devise
 * AWS
 
 # カリキュラム外から使用する技術
-* fullcalendar（JSライブラリ）
-* lazy_high_charts（gem）
+* fullcalendar
+* lazy_high_charts（high_charts）
 
-# その他使用予定Gem
-  * bootstrap
+# その他使用Gem
+  * bootstrap　
   * kaminari
   * carrierwave
   * mini_magick
   * fog-aws
   * faker
+  * autonumeric-rails
+  * unicorn
+  * capistrano
