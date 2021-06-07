@@ -43,11 +43,11 @@
 # 就業Termから使用する技術
 * Ajax
 * devise
-* AWS
+* AWS EC2/S3
 
-# カリキュラム外から使用する技術
+# JSライブラリ（カリキュラム外から使用する技術）
 * fullcalendar
-* lazy_high_charts（high_charts）
+* high_charts
 
 # その他使用Gem
   * bootstrap　
