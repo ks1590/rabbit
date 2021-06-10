@@ -20,9 +20,7 @@
 //= require fullcalendar.min
 //= require ja
 //= require turbolinks
-//= require highcharts/highcharts
 //= require autonumeric
-//= require_tree .
 
 $(function () {
   $('.alert').fadeOut(3500);
