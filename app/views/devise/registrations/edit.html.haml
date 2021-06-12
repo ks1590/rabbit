@@ -24,7 +24,10 @@
               = image_tag 'default.png', class: 'avatar_present_img'
               = f.hidden_field :image_cache
             %br/
-            = f.file_field :image, id: 'post_img'
+            - if current_user.email == "guest_user@example.com"
+              %p ※ゲストユーザーのためアカウント情報は編集できません。
+            - else
+              = f.file_field :image, id: 'post_img'
           %hr.my-4/
           .form-group
             = f.label :name
