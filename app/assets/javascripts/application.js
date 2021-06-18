@@ -25,3 +25,10 @@
 $(function () {
   $('.alert').fadeOut(3500);
 });
+
+$(document).on("turbolinks:load", function () {
+  $("#myModal").draggable({
+    handle: ".modal-dialog",
+    cancel: false
+  })
+});

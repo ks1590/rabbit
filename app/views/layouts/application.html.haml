@@ -5,9 +5,11 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_link_tag    'calcurator.css', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'    
     = javascript_include_tag "nav.js", 'data-turbolinks-track': 'reload'
     = javascript_include_tag "user.js", 'data-turbolinks-track': 'reload'
+    = javascript_include_tag "calculator.js", 'data-turbolinks-track': 'reload'
     = yield :css    
     = yield :js
     %link#favicon{:href => "/images/favicon.ico", :rel => "icon"}/
