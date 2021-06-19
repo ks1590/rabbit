@@ -29,6 +29,6 @@
           = link_to t('view.log_out'), destroy_user_session_path, method: :delete
         %li          
           %span.mr-3
-          %button.btn.btn-primary{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
+          .calc{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
             電卓
 = render 'layouts/calculator'

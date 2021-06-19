@@ -158,7 +158,7 @@ aside .side-inner .nav-menu ul li a:before {
 }
 
 aside .side-inner .nav-menu ul li a:active, aside .side-inner .nav-menu ul li a:focus, aside .side-inner .nav-menu ul li a:hover {
-    outline: none;
+  outline: none;
 }
 
 aside .side-inner .nav-menu ul li a:hover {
@@ -178,6 +178,60 @@ aside .side-inner .nav-menu ul li.active a {
 }
 
 aside .side-inner .nav-menu ul li.active a:before {
+  opacity: 1;
+  visibility: visible;
+  width: 4px;
+}
+
+aside .side-inner .nav-menu ul li .calc {
+  display: block;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #8b8b8b;
+  position: relative;
+  -webkit-transition: .3s padding-left ease;
+  -o-transition: .3s padding-left ease;
+  transition: .3s padding-left ease;
+}
+
+aside .side-inner .nav-menu ul li .calc:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0px;
+  background-color: #ff7315;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: .3s opacity ease, .3s visibility ease, .3s width ease;
+  -o-transition: .3s opacity ease, .3s visibility ease, .3s width ease;
+  transition: .3s opacity ease, .3s visibility ease, .3s width ease;
+}
+
+aside .side-inner .nav-menu ul li .calc:active, aside .side-inner .nav-menu ul li .calc:focus, aside .side-inner .nav-menu ul li .calc:hover {
+  outline: none;
+}
+
+aside .side-inner .nav-menu ul li .calc:hover {
+  background: #fcfcfc;
+  color: #000;
+}
+
+aside .side-inner .nav-menu ul li .calc:hover:before {
+  width: 4px;
+  opacity: 1;
+  visibility: visible;
+}
+
+aside .side-inner .nav-menu ul li.active .calc {
+  background: #fcfcfc;
+  color: #000;
+}
+
+aside .side-inner .nav-menu ul li.active .calc:before {
   opacity: 1;
   visibility: visible;
   width: 4px;
