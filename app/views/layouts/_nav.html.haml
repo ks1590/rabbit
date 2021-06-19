@@ -26,9 +26,9 @@
           = link_to t('view.profile'), user_path(current_user.id)
         %li          
           %span.mr-3
-          = link_to t('view.log_out'), destroy_user_session_path, method: :delete
-        %li          
-          %span.mr-3
           .calc{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
-            電卓
+            = t('view.calc')
+        %li
+          %span.mr-3
+          = link_to t('view.log_out'), destroy_user_session_path, method: :delete
 = render 'layouts/calculator'
