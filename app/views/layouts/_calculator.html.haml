@@ -1,0 +1,27 @@
+#myModal.modal.fade{"aria-hidden" => "true", "aria-labelledby" => "myModalLabel", "data-backdrop" => "", :role => "dialog", :tabindex => "-1"}
+  .modal-dialog.modal-dialog-centered
+    #calc.modal-content
+      .close-content
+        %button.btn-close{"data-dismiss" => "modal"} ✖︎
+      .calculator-grid
+        .output
+          .previous-operand{"data-previous-operand" => ""}
+          .current-operand{"data-current-operand" => ""}
+        %button.span-two{"data-all-clear" => ""} AC
+        %button.btn-calc{"data-delete" => ""} DEL
+        %button.btn-calc{"data-operation" => ""} ÷
+        %button.btn-calc{"data-number" => ""} 1
+        %button.btn-calc{"data-number" => ""} 2
+        %button.btn-calc{"data-number" => ""} 3
+        %button.btn-calc{"data-operation" => ""} ×
+        %button.btn-calc{"data-number" => ""} 4
+        %button.btn-calc{"data-number" => ""} 5
+        %button.btn-calc{"data-number" => ""} 6
+        %button.btn-calc{"data-operation" => ""} +
+        %button.btn-calc{"data-number" => ""} 7
+        %button.btn-calc{"data-number" => ""} 8
+        %button.btn-calc{"data-number" => ""} 9
+        %button.btn-calc{"data-operation" => ""} -
+        %button.btn-calc{"data-number" => ""} .
+        %button.btn-calc{"data-number" => ""} 0
+        %button.span-two{"data-equals" => ""} =

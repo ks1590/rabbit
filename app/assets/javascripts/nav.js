@@ -13,6 +13,18 @@ initialize_nav = function () {
     e.preventDefault();
   });
 
+  $('.calc').click(function (e) {
+    let $this = $('.js-menu-toggle');
+    if ($('body').hasClass('show-sidebar')) {
+      $('body').removeClass('show-sidebar');
+      $this.removeClass('active');
+    } else {
+      $('body').addClass('show-sidebar');
+      $this.addClass('active');
+    }
+    e.preventDefault();
+  });
+
   $(document).mouseup(function (e) {
     let container = $(".sidebar");
     if (!container.is(e.target) && container.has(e.target).length === 0) {
