@@ -16,6 +16,13 @@ Rails.application.routes.draw do
     :passwords => 'users/passwords'
   }  
   
-  resources :users, only: [:show]
+  resources :users, only: [:show] do
+    collection do 
+      get :setting
+    end
+  end
+
   resources :trades
+  resources :payments
+  resources :categories
 end
