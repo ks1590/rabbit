@@ -16,16 +16,8 @@
     %link{:crossorigin => "anonymous", :href => "https://use.fontawesome.com/releases/v5.8.2/css/all.css", :integrity => "sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay", :rel => "stylesheet"}/
   %body
     - if user_signed_in?
-      = render "layouts/nav", user: @user
-    - if notice
-      　
-      .alert.alert-info
-        = notice
-        %button.close{"data-dismiss" => "alert", :type => "button"} ×
-    - elsif alert
-      .alert.alert-danger
-        = alert
-        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+      = render "layouts/nav", user: @user  
+    = render "layouts/message"
     = yield
     #remote_container
     = render "layouts/footer"
