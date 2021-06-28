@@ -21,6 +21,7 @@
 //= require ja
 //= require turbolinks
 //= require autonumeric
+//= require toastr
 
 $(function () {
   $('.alert').fadeOut(3500);

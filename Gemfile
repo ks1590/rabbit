@@ -34,6 +34,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'faker'
 gem 'autonumeric-rails'
+gem "toastr-rails"
 
 gem'lazy_high_charts'
 
