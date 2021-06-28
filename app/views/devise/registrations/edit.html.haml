@@ -2,6 +2,9 @@
   = stylesheet_link_tag 'nav'
   = stylesheet_link_tag 'devise'
   = stylesheet_link_tag 'users'
+  = stylesheet_link_tag 'calcurator.css', media: 'all', 'data-turbolinks-track': 'reload'
+- content_for :js do
+  = javascript_include_tag "calculator.js", 'data-turbolinks-track': 'reload'
 .d-flex.justify-content-center.text-center.flex-wrap
   .col-lg-7
     = render "devise/shared/error_messages", resource: resource
