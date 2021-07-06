@@ -2,8 +2,10 @@
   = stylesheet_link_tag 'nav'
   = stylesheet_link_tag 'users'
   = stylesheet_link_tag 'chart'
+  = stylesheet_link_tag 'calcurator.css', media: 'all', 'data-turbolinks-track': 'reload'
 - content_for :js do
-  = javascript_include_tag "chart.js", 'data-turbolinks-track': 'reload'  
+  = javascript_include_tag "chart.js", 'data-turbolinks-track': 'reload'
+  = javascript_include_tag "calculator.js", 'data-turbolinks-track': 'reload'
 %section
   .container-fluid
     .col-xl-12.col-lg-12.col-md-12.ml-auto
