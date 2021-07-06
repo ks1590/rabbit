@@ -28,6 +28,9 @@
           %span.mr-3
           .calc{"data-target" => "#myModal", "data-toggle" => "modal", :type => "button"}
             = t('view.calc')
+        %li          
+          %span.mr-3
+          = link_to t('view.setting'), setting_users_path            
         %li
           %span.mr-3
           = link_to t('view.log_out'), destroy_user_session_path, method: :delete
